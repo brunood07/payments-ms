@@ -8,6 +8,8 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
 @Service
 public class CreatePaymentUseCase {
 
@@ -23,6 +25,8 @@ public class CreatePaymentUseCase {
                 .paymentStatus(PaymentStatus.PROCESSING.getValue())
                 .paymentType(data.getPaymentType())
                 .value(data.getValue())
+                .createdAt(LocalDateTime.now())
+                .updatedAt(LocalDateTime.now())
                 .build();
 
         this.paymentsRepository.save(payment);

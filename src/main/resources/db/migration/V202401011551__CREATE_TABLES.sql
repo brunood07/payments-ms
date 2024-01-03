@@ -8,7 +8,9 @@ create table ecomm_payments.tb_payments(
     payment_status varchar(20) default 'pending',
     description varchar(200),
     installments integer default 1,
-    client_document varchar(20) not null
+    client_document varchar(20) not null,
+    created_at timestamp without time zone not null,
+    updated_at timestamp without time zone not null
 );
 
 alter table ecomm_payments.tb_payments owner to admin;

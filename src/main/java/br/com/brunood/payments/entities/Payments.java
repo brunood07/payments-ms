@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Table(name = "tb_payments")
 @Entity
@@ -36,4 +37,10 @@ public class Payments {
 
     @Column(name = "client_document")
     private String clientDocument;
+
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
+
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
 }
