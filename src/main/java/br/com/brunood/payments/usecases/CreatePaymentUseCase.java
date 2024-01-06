@@ -18,7 +18,7 @@ public class CreatePaymentUseCase {
     private PaymentsRepository paymentsRepository;
 
     @RabbitListener(queues = "payment.created")
-    public void createPayment(CreatePaymentDTO data) {
+    public void execute(CreatePaymentDTO data) {
 
         var paymentStatus = data.getPaymentType().equals(PaymentType.CREDIT_CARD.getValue()) ? PaymentStatus.PROCESSING.getValue() : PaymentStatus.PENDING.getValue();
 
