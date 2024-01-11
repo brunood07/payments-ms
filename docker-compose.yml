@@ -27,7 +27,7 @@ services:
     depends_on:
       - postgres
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/payments-db
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5433/payments-db
       SPRING_DATASOURCE_USERNAME: admin
       SPRING_DATASOURCE_PASSWORD: admin
 
